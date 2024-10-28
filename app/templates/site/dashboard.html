@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AF Saúde e Benefícios - Unimed</title>
+
+    <!-- NORMALIZE.CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+    <!-- Bootstrap 4 CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Font Awesome 5 CDN -->
+    <script src="https://kit.fontawesome.com/a69cec9c91.js" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilo-dashboard.css' %}">
+    <style type="text/css">
+        body{
+            font-family: "Kanit", sans-serif;
+        }
+
+        header{
+            background: rgb(0, 104, 55, 1);
+            background: -moz-linear-gradient(90deg, rgba(0, 104, 55, 1) 0%, rgba(47, 110, 63, 1) 100%);
+            background: -webkit-linear-gradient(90deg, rgba(0, 104, 55, 1) 0%, rgba(47, 110, 63, 1) 100%);
+            background: linear-gradient(90deg, rgba(0, 104, 55, 1) 0%, rgba(47, 110, 63, 1) 100%);
+        }
+        li {
+            list-style: none;
+            min-height: 0.5em;
+            font-size: 0.8em;
+           
+        }
+
+        ul{
+           height: 100%;
+           margin-bottom: 0.5em;
+           overflow-y:auto;
+        }
+
+        a{
+            text-decoration: none;
+        }
+    </style>
+
+    <!-- Font Awesome 5 CDN -->
+    <script src="https://kit.fontawesome.com/a69cec9c91.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="bg-success text-white text-center p-0 m-0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-2">
+                    <!-- LOGO -->
+                    <img src="{% static 'img/logo.png' %}" alt="Logo AF SAÚDE" class="img-fluid">
+                </div>
+                <div class="col-md-10">
+                    <!-- TÍTULO E DESCRIÇÃO -->
+                    <h1>AF Saúde e Benefícios</h1>
+                    <p>Sua escolha inteligente para planos de saúde Unimed em São Carlos.</p>
+                </div>
+                <div class="col-md-12">Olá,{{request.user|capfirst}}, você tem {{quantidade_leads|length}} Leads.</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTAINER PRINCIPAL -->
+    <div class="container mt-4 text-dark">
+        <h1 class="no-wrap">Dashboard Leads</h1>
+        <!-- DISPLAY DE LEADS -->
+        <div class="m-0 p-0 border border-dark rounded">
+            <ul class="border border-dark rounded">
+                {% if leads %}
+                    {% for lead in leads %}
+                    <li >
+                        <div class="btn text-center text-dark" data-toggle="modal" data-target="#lead-{{ lead.pk }}">
+                            <strong>
+                                <span>Data: {{ lead.data_recebimento|slice:":16" }}</span>
+                                <span>Nome: {{ lead.nome_leads }}</span>
+                                <span>Whatsapp: {{ lead.whats_app_leads}}</span>
+                            <strong> 
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="lead-{{ lead.pk }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">{{ lead.nome_leads }}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <p><strong>Data:</strong> {{ lead.data_recebimento }}</p>
+                                <p><strong>Whatsapp:</strong> {{ lead.whats_app_leads }}</p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                <a class=" btn btn-success" href="https://wa.me/5516993379492"  target="_blank">
+                                    <i class="fab fa-whatsapp"> Iniciar Atendimento</i>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- FINAL DO Modal -->
+                    </li>
+                    {% endfor %}
+                {% else %}
+                    <li>Não há leads</li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+    <!-- FINAL CONTAINER PRINCIPAL -->
+
+    <!-- Bootstrap 4 JavaScript e jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

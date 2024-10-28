@@ -49,16 +49,163 @@ li{
 }
 
 .modal-body{
-	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0);
 }
 
 .img-modal{
 	box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.3);
 }
 
+small{
+	font-size: 0.6em;
+	line-height:-10em;
+}
+
+#btn-enviar:disabled {
+    
+    cursor: not-allowed; /* Muda o cursor para indicar que não está disponível */
+}
 
 
-@media(max-width:1023.99px){
+
+
+@media(max-width:320px){
+	
+	#img-logo{
+		max-height: 8em;
+		min-width: 10em;
+		position: relative;
+		left: -6em;
+	}
+
+	#img-logo-plano{
+		height: 10em;
+		width: 10em;
+		position: relative;
+		left: 4em;
+		top: -7em;
+	}
+
+	#conteudo{
+		position: relative;
+		top: -8em;
+	}
+
+	#destaque-mobile{
+		position: relative;
+		top:0em;
+		left: -9em;
+		max-height: 25em;
+		min-width: 60%;
+	}
+
+	#div-form{
+		width: 110%;
+		position: relative;
+		left:  -1em;
+		top: -10em;
+	}
+
+	#beneficios-plano-saude{
+		position: relative;
+		top:-10em;
+	}
+
+	.card-deck{
+		position: relative;
+		top: -10em;
+	}
+
+
+}
+
+@media(min-width:321px) and (max-width:393px){
+	#img-logo{
+		max-height: 8em;
+		min-width: 10em;
+		position: relative;
+		left: -1em;
+	}
+
+	#img-logo-plano{
+		height: 10em;
+		width: 10em;
+		position: relative;
+		left: 0em;
+		top:0em;
+	}
+
+	#conteudo{
+		position: relative;
+		top: -2em;
+	}
+
+	#destaque-mobile{
+		position: relative;
+		top:-1em;
+		left: -8em;
+		max-height: 25em;
+		min-width: 60%;
+	}
+
+	#div-form{
+		width: 110%;
+		position: relative;
+		left:  -1em;
+		top: -10em;
+	}
+
+	#beneficios-plano-saude{
+		position: relative;
+		top:-10em;
+	}
+
+	.card-deck{
+		position: relative;
+		top: -10em;
+	}
+}
+
+@media(min-width:394px) and (max-width:767px){
+	
+	#img-logo{
+		max-height: 8em;
+		min-width: 10em;
+		position: relative;
+		left: -2em;
+	}
+
+	#img-logo-plano{
+		height: 10em;
+		position: relative;
+		left: 0em;
+		top:0em;
+	}
+
+	#conteudo{
+		position: relative;
+		top: -2em;
+	}
+
+	#destaque-mobile{
+		position: relative;
+		top:0em;
+		left:-8em;
+		
+		width: 140%;
+	}
+
+	#div-form, #beneficios-plano-saude,.card-deck{
+		position: relative;
+		top: -10em;
+	}
+
+
+}
+
+
+
+@media(min-width: 768px) and (max-width:1023.99px){
 	
 	body {
 	    width: 100vw;
@@ -73,34 +220,35 @@ li{
 		max-height: 8em;
 		min-width: 10em;
 		position: relative;
-		left: -7em;
+		left: 0em;
 	}
 
 	#img-logo-plano{
 		height: 10em;
 		position: relative;
-		left: 5em;
-		top: -7em;
+		left: 0em;
+		top: 0em;
 	}
-
-
 
 	#destaque-mobile{
 		position: relative;
-		top:-9em;
-		left: -8em;
-		max-height: 25em;
-		min-width: 100%;
+		top:-2em;
+		left:-14em;
+		width: 140%;
+	}
 
+	#conteudo{
+		position: relative;
+		top: -2em;
 	}
 
 	#div-form{
 		position: relative;
-		top: -8em;
+		top:-8em;
 		min-width: 100%;
+		margin: 0;
+		border: 1px solid red;
 	}
-
-
 
 	.bg-header-beneficios{
 		background:transparent;
@@ -134,6 +282,11 @@ li{
 		display: none;
 	}
 
+	#div-form, #beneficios-plano-saude,.card-deck{
+		position: relative;
+		top: -10em;
+	}
+
 	
 
 }
@@ -145,12 +298,15 @@ li{
 		max-height: 6em;
 	}
 
+	#destaque-mobile{
+		display: none;
+	}
+
 	#container{
-		background-image: url('hospital-unimed-v7.png');
+		background-image: url('/static/img/hospital-unimed-v7.png');
 		background-repeat: no-repeat;
 		background-position:380px -5px;
 		min-height: 950px;
-		
 	}
 
 	.card:hover{
@@ -174,10 +330,7 @@ li{
 		
 	}
 
-	#copy-lp{
-
-	}
-
+	
 	#text-copy-lp{
 		
 		position: relative;
@@ -230,6 +383,10 @@ li{
 		width: 100%;
 		min-height: 200px;
 	}
+
+	.img-card{
+                max-height: 200px;
+            }
 
 	
 

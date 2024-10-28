@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+	//alert('modal')
 	$(document).on('click','#btn-card-1', function(){
 		$('.card').hide();
 	
