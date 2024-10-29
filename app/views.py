@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import requests
 from .models import Leads
 from datetime import datetime
@@ -52,6 +52,12 @@ def agradecimento(request):
 def dashboard(request, user):
     leads = Leads.objects.all().order_by('-data_recebimento')
     return render(request,'site/dashboard.html',{'leads': leads})
+
+@login_required
+def login_redirect(request):
+    url_redirect = user.username + '/dashboard'
+    redirect(url_redirect)
+
 
 
 

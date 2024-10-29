@@ -18,13 +18,18 @@
         a{
             text-decoration: none;
         }
+
+        footer{
+            position: absolute;
+            top:100%;
+        }
     </style>
 
     <!-- Font Awesome 5 CDN -->
     <script src="https://kit.fontawesome.com/a69cec9c91.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container mb-5">
         <h1 class="no-wrap">Obrigado por escolher realizar sua cotação de plano Unimed<br>São Carlos com a</h1>
         <img class="img img-fluid text-center" src="{% static 'img/logo.png' %}">
         <p class=" m-0 p-0">Sua solicitação foi recebida com sucesso!<br>Em breve, nossa equipe de atendimento especializado entrará em contato para ajudar na escolha do plano ideal para você.</p>
@@ -48,6 +53,13 @@
             
         </div>
     </div>
+
+     <!-- FOOTER -->
+    <footer class="footer row justify-content-center align-items-center text-center p-3 text-white">
+        <i class="fa fa-copyright mr-2" aria-hidden="true"></i>
+        <div class="mr-2">Antherus - Desenvolvimento Web</div>
+        <small><i class="fa fa-whatsapp mr-1" aria-hidden="true"></i><span>(16) 99337-9492</span></small>
+    </footer>
 </body>
 </html>
            

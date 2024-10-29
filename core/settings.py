@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-x_txyv!nk0v)3_%hv1&5i(5w+v5vrqkd8@xr_6zo4z#um6z728
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*','www.afunimedsaocarlos.com.br','afunimedsaocarlos','54.163.93.29']
 
 
 # Application definition
@@ -127,3 +127,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = 'adriana/dashboard/'
