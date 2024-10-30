@@ -128,4 +128,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = 'adriana/dashboard/'
+# Redireciona para o dashboard após login
+#LOGIN_REDIRECT_URL = 'accounts/login/dashboard/'
+LOGOUT_REDIRECT_URL = '/login/'

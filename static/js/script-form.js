@@ -14,7 +14,7 @@ $(document).ready(function(){
     })
 
     $(document).on('click','#aceito-termos',function(){
-       $("#btn-enviar").removeAttr('disabled');
+       $("#btn-enviar").removeAttr('disabled').removeClass('btn-blink');
     })
 })
 

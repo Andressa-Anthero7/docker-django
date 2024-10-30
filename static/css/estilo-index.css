@@ -11,6 +11,7 @@ body{
 	background: linear-gradient(90deg, rgba(0, 104, 55, 1) 0%, rgba(47, 110, 63, 1) 100%);
 	/*font-family: 'Oswald', sans-serif;  Aplicando a fonte */
 	font-family: "Kanit", sans-serif;
+	
 }
 
 li{
@@ -66,10 +67,36 @@ small{
     cursor: not-allowed; /* Muda o cursor para indicar que não está disponível */
 }
 
+/* Animação de piscar */
+@keyframes blink {
+    0%, 100% { opacity: 1; } /* Totalmente visível no início e no final */
+    10% { opacity: 0; }      /* Fica invisível por um instante no meio */
+}
+
+/* Classe para o botão que pisca */
+.blink-btn {
+    animation: blink 3s infinite; /* A cada 3 segundos o botão pisca */
+}
+
+/* Pausa a animação quando passa o mouse sobre #div-form */
+#div-form:hover .blink-btn {
+    animation-play-state: paused;
+}
+
+/* Pausa a animação quando passa o mouse sobre #btn-cotacao-agora */
+#btn-cotacao-agora:hover .blink-btn {
+    animation-play-state: paused;
+}
+
+
 
 
 
 @media(max-width:320px){
+
+	body{
+		overflow-y: hidden;
+	}
 	
 	#img-logo{
 		max-height: 8em;
@@ -117,9 +144,15 @@ small{
 	}
 
 
+
+
 }
 
 @media(min-width:321px) and (max-width:393px){
+	body{
+		overflow-y: hidden;
+	}
+
 	#img-logo{
 		max-height: 8em;
 		min-width: 10em;
@@ -167,6 +200,9 @@ small{
 }
 
 @media(min-width:394px) and (max-width:767px){
+	body{
+		overflow-y: hidden;
+	}
 	
 	#img-logo{
 		max-height: 8em;
@@ -385,8 +421,18 @@ small{
 	}
 
 	.img-card{
-                max-height: 200px;
-            }
+        max-height: 200px;
+    }
+
+    #btn-cotacao-agora{
+    	position: relative;
+    	top: 7em;
+    }
+
+    footer{
+    	position: relative;
+    	top: 10em;
+    }
 
 	
 
