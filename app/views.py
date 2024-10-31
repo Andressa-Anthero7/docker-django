@@ -13,17 +13,15 @@ def index(request):
         whats_app_leads = request.POST.get('whatsapp')
         recebido_em = datetime.now()
         Leads.objects.create(nome_leads=nome_leads, whats_app_leads=whats_app_leads, data_recebimento=recebido_em)
-
-        whats_app_receptor = "5516993379492"
-        
+        whats_app_receptor = "16999628815"
         # Montar a mensagem
-        message = f"Olá, Adriana! Você recebeu novo lead - Nome: {nome_leads} - WhatsApp: {whats_app_leads}<br>Acesse: www.afunimesaocarlos.com.br/accounts/login/{nome_leads}/dashboard/"
+        message = f"Olá, Adriana! Você recebeu novo lead - Nome: {nome_leads} - WhatsApp: {whats_app_leads}<br>Acesse: www.afunimedsaocarlos.com.br/accounts/login/adriana/dashboard/"
 
         # Sua API Key fornecida pelo CallMeBot
         api_key = "1271569"  # Substitua pela sua API Key
 
         # URL da API do CallMeBot (o WhatsApp deve estar no formato internacional)
-        url = f'https://api.callmebot.com/whatsapp.php?phone={whats_app_receptor}&text={message}&apikey={api_key}'
+        url = f'https://api.callmebot.com/whatsapp.php?phone=55{whats_app_receptor}&text={message}&apikey={api_key}'
 
         # Enviar a mensagem via requisição GET
         response = requests.get(url)
