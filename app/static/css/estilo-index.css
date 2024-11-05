@@ -1,418 +1,367 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&display=swap');
-*{
-	margin: 0;
-	padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Oswald:wght@200..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-	background: rgb(0, 104, 55, 1);
-	background: -moz-linear-gradient(90deg, rgba(0, 104, 55, 1) 0%, rgba(47, 110, 63, 1) 100%);
-	background: -webkit-linear-gradient(90deg, rgba(0, 104, 55, 1) 0%, rgba(47, 110, 63, 1) 100%);
-	background: linear-gradient(90deg, rgba(0, 104, 55, 1) 0%, rgba(47, 110, 63, 1) 100%);
-	/*font-family: 'Oswald', sans-serif;  Aplicando a fonte */
-	font-family: "Kanit", sans-serif;
-	
+body {
+    background: rgb(0, 104, 55, 1);
+    background: linear-gradient(90deg, rgba(0, 104, 55, 1) 0%, rgba(47, 110, 63, 1) 100%);
+    font-family: "Kanit", sans-serif;
+    overflow-x: hidden;
 }
 
-li{
-	list-style: none;
+/* HEADER */
+header {
+    max-height: 6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em; /* Espaçamento entre as logos */
 }
 
-
-
-#logo-hapvida-copy{
-	max-height: 10em;
-	position: relative;
-	top: -3.6em;
-
+/* LOGOS no header */
+#img-logo, #img-logo-plano {
+    max-height: 8em;
+    width: auto;
 }
 
-#beneficios-plano-saude{
-	width: 100%;
+/* Logo específicas */
+#logo-hapvida-copy {
+    max-height: 10em;
+    position: relative;
+    top: -3.6em;
 }
 
-
-#img-logo{
-	
-	width: 10em;
-	
+li {
+    list-style: none;
 }
 
-#img-logo-plano{
-	max-height: 5em;
-
+.font-size-icons {
+    font-size: 5em;
+    padding: 0.2em;
+    color: #4767ae;
 }
 
-.font-size-icons{
-	font-size: 5em;
-	padding: 0.2em;
-	color: #4767ae;
+.modal-body {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0);
 }
 
-.modal-body{
-	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0);
+.img-modal {
+    box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.3);
 }
 
-.img-modal{
-	box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.3);
-}
-
-small{
-	font-size: 0.6em;
-	line-height:-10em;
+small {
+    font-size: 0.6em;
+    line-height: -10em;
 }
 
 #btn-enviar:disabled {
-    
-    cursor: not-allowed; /* Muda o cursor para indicar que não está disponível */
+    cursor: not-allowed;
 }
 
-
-@media(max-width:320px){
-
-	body{
-		overflow-x: hidden;
-	}
-	
-	#img-logo{
-		max-height: 8em;
-		min-width: 10em;
-		position: relative;
-		left: -6em;
-	}
-
-	#img-logo-plano{
-		height: 10em;
-		width: 10em;
-		position: relative;
-		left: 4em;
-		top: -7em;
-	}
-
-	#conteudo{
-		position: relative;
-		top: -8em;
-	}
-
-	#destaque-mobile{
-		position: relative;
-		top:0em;
-		left: -9em;
-		max-height: 25em;
-		min-width: 60%;
-	}
-
-	#div-form{
-		width: 110%;
-		position: relative;
-		left:  -1em;
-		top: -10em;
-	}
-
-	#beneficios-plano-saude{
-		position: relative;
-		top:-10em;
-	}
-
-	.card-deck{
-		position: relative;
-		top: -10em;
-	}
-
-
-
-
+/* ESTILIZAÇÃO DAS IMAGENS E FORMULÁRIOS */
+#img-logo {
+    max-height: 8em;
+    width: auto;
 }
 
-@media(min-width:321px) and (max-width:393px){
-	body{
-		overflow-x: hidden;
-	}
-
-	#img-logo{
-		max-height: 8em;
-		min-width: 10em;
-		position: relative;
-		left: -1em;
-	}
-
-	#img-logo-plano{
-		height: 10em;
-		width: 10em;
-		position: relative;
-		left: 0em;
-		top:0em;
-	}
-
-	#conteudo{
-		position: relative;
-		top: -2em;
-	}
-
-	#destaque-mobile{
-		position: relative;
-		top:-1em;
-		left: -8em;
-		max-height: 25em;
-		min-width: 60%;
-	}
-
-	#div-form{
-		width: 110%;
-		position: relative;
-		left:  -1em;
-		top: -10em;
-	}
-
-	#beneficios-plano-saude{
-		position: relative;
-		top:-10em;
-	}
-
-	.card-deck{
-		position: relative;
-		top: -10em;
-	}
+#img-logo-plano {
+    max-height: 5em;
+    width: auto;
 }
 
-@media(min-width:394px) and (max-width:767px){
-	body{
-		overflow-x: hidden;
-	}
-	
-	#img-logo{
-		max-height: 8em;
-		min-width: 10em;
-		position: relative;
-		left: -2em;
-	}
-
-	#img-logo-plano{
-		height: 10em;
-		position: relative;
-		left: 0em;
-		top:0em;
-	}
-
-	#conteudo{
-		position: relative;
-		top: -2em;
-	}
-
-	#destaque-mobile{
-		position: relative;
-		top:0em;
-		left:-8em;
-		
-		width: 140%;
-	}
-
-	#div-form, #beneficios-plano-saude,.card-deck{
-		position: relative;
-		top: -10em;
-	}
-
-
+#beneficios-plano-saude {
+    width: 100%;
 }
 
+/* ESTILIZAÇÃO DAS MEDIAS QUERIES */
 
+@media(max-width: 320px) {
+    #img-logo {
+        max-height: 8em;
+        min-width: 10em;
+        position: relative;
+        left: -6em;
+    }
 
-@media(min-width: 768px) and (max-width:1023.99px){
-	
-	body {
-	    width: 100vw;
-	    height: 100vh;
-	    margin: 0;
-	    overflow-x: hidden;
-	       
-	}
+    #img-logo-plano {
+        height: 10em;
+        width: 10em;
+        position: relative;
+        left: 4em;
+        top: -7em;
+    }
 
+    #conteudo {
+        position: relative;
+        top: -8em;
+    }
 
-	#img-logo{
-		max-height: 8em;
-		min-width: 10em;
-		position: relative;
-		left: 0em;
-	}
+    #destaque-mobile {
+        position: relative;
+        top: 0em;
+        left: -9em;
+        max-height: 25em;
+        min-width: 60%;
+    }
 
-	#img-logo-plano{
-		height: 10em;
-		position: relative;
-		left: 0em;
-		top: 0em;
-	}
+    #div-form {
+        width: 110%;
+        position: relative;
+        left: -1em;
+        top: -10em;
+    }
 
-	#destaque-mobile{
-		position: relative;
-		top:-2em;
-		left:-14em;
-		width: 140%;
-	}
+    #beneficios-plano-saude {
+        position: relative;
+        top: -10em;
+    }
 
-	#conteudo{
-		position: relative;
-		top: -2em;
-	}
-
-	#div-form{
-		position: relative;
-		top:-8em;
-		min-width: 100%;
-		margin: 0;
-		border: 1px solid red;
-	}
-
-	.bg-header-beneficios{
-		background:transparent;
-		max-height: 20em;
-	}
-
-	#beneficios-plano-saude{
-		position: relative;
-		top:-8em;
-	}
-
-	#logo-hapvida-sessao-beneficios{
-		position: relative;
-		top: -2em;
-	}
-
-	.card-deck{
-		position: relative;
-		top: -8em;
-	}
-
-	.card{
-		margin-bottom: 2em;
-	}
-
-	#img-logo-plano{
-		
-	}
-
-	#header-contrate-plano{
-		display: none;
-	}
-
-	#div-form, #beneficios-plano-saude,.card-deck{
-		position: relative;
-		top: -10em;
-	}
-
-	
-
+    .card-deck {
+        position: relative;
+        top: -10em;
+    }
 }
 
+@media(min-width: 321px) and (max-width: 393px) {
+    #img-logo {
+        max-height: 8em;
+        min-width: 10em;
+        position: relative;
+        left: -1em;
+    }
 
-@media(min-width:1024px){
-	header{
-		
-		max-height: 6em;
-	}
+    #img-logo-plano {
+        height: 10em;
+        width: 10em;
+        position: relative;
+        left: 0em;
+        top: 0em;
+    }
 
-	#destaque-mobile{
-		display: none;
-	}
+    #conteudo {
+        position: relative;
+        top: -2em;
+    }
 
-	#container{
-		background-image: url('/static/img/hospital-unimed-v7.png');
-		background-repeat: no-repeat;
-		background-position:380px -5px;
-		min-height: 950px;
-	}
+    #destaque-mobile {
+        position: relative;
+        top: -1em;
+        left: -8em;
+        max-height: 25em;
+        min-width: 60%;
+    }
 
-	.card:hover{
-		transform: scale(1.1);
-		margin-bottom: 1em;
-	}
+    #div-form {
+        width: 110%;
+        position: relative;
+        left: -1em;
+        top: -10em;
+    }
 
-	
+    #beneficios-plano-saude {
+        position: relative;
+        top: -10em;
+    }
 
-	#img-logo{
-		position: relative;
-		right: 10%;
-		max-height:8em ;
+    .card-deck {
+        position: relative;
+        top: -10em;
+    }
+}
 
-	}
+@media(min-width: 394px) and (max-width: 767px) {
+    #img-logo {
+        max-height: 8em;
+        min-width: 10em;
+        position: relative;
+        left: -2em;
+    }
 
-	#img-logo-plano{
-		position: relative;
-		left:15%;
-		top: 0em;
-		
-	}
+    #img-logo-plano {
+        height: 10em;
+        position: relative;
+        left: 0em;
+        top: 0em;
+    }
 
-	
-	#text-copy-lp{
-		
-		position: relative;
-		top: 1em;
-		left: 5em;
-	}
+    #conteudo {
+        position: relative;
+        top: -2em;
+    }
 
-	#div-form{
-		position: relative;
-		top:-5em;
-		box-shadow: 5px 2px 1px #006837;
-	}
+    #destaque-mobile {
+        position: relative;
+        top: 0em;
+        left: -8em;
+        width: 140%;
+    }
 
-	#destaque-mobile{
-		display: none;
-	}
+    #div-form, #beneficios-plano-saude, .card-deck {
+        position: relative;
+        top: -10em;
+    }
+}
 
+@media(min-width: 768px) and (max-width: 1023.99px) {
+    body {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        overflow-x: hidden;
+    }
 
+    #img-logo {
+        max-height: 8em;
+        min-width: 10em;
+        position: relative;
+        left: 0em;
+    }
 
-	.bg-header-beneficios{
-		background: transparent;
-		max-height: 20em;
-	}
+    #img-logo-plano {
+        height: 10em;
+        position: relative;
+        left: 0em;
+        top: 0em;
+    }
 
+    #destaque-mobile {
+        position: relative;
+        top: -2em;
+        left: -14em;
+        width: 140%;
+    }
 
+    #conteudo {
+        position: relative;
+        top: -2em;
+    }
 
-	#logo-hapvida-sessao-beneficios{
-		position: relative;
-		top:-12em;
-	}
+    #div-form {
+        position: relative;
+        top: -8em;
+        min-width: 100%;
+        margin: 0;
+        border: 1px solid red;
+    }
 
-	#logo-plano-sessao-beneficios{
-		position: relative;
-		top: -5em;
-		width: 100%;
-		max-height: 28em;
-	}
+    .bg-header-beneficios {
+        background: transparent;
+        max-height: 20em;
+    }
 
-	.card-deck{
-		position: relative;
-		top: 3em;
-		margin-top: 1em;
-	}
+    #beneficios-plano-saude {
+        position: relative;
+        top: -8em;
+    }
 
-	.img-modal{
-		width: 60%;
-	}
+    #logo-hapvida-sessao-beneficios {
+        position: relative;
+        top: -2em;
+    }
 
-	.card img{
-		width: 100%;
-		min-height: 200px;
-	}
+    .card-deck {
+        position: relative;
+        top: -8em;
+    }
 
-	.img-card{
+    .card {
+        margin-bottom: 2em;
+    }
+
+    #div-form, #beneficios-plano-saude, .card-deck {
+        position: relative;
+        top: -10em;
+    }
+}
+
+@media(min-width: 1024px) {
+    #destaque-mobile {
+        display: none;
+    }
+
+    #container {
+        background-image: url('/static/img/hospital-unimed-v7.png');
+        background-repeat: no-repeat;
+        background-position: 380px -5px;
+        min-height: 950px;
+    }
+
+    .card:hover {
+        transform: scale(1.1);
+        margin-bottom: 1em;
+    }
+
+    #img-logo {
+        position: relative;
+        right: 10%;
+        max-height: 8em;
+    }
+
+    #img-logo-plano {
+        position: relative;
+        left: 15%;
+        top: 0em;
+    }
+
+    #text-copy-lp {
+        position: relative;
+        top: 1em;
+        left: 5em;
+    }
+
+    #div-form {
+        position: relative;
+        top: -5em;
+        box-shadow: 5px 2px 1px #006837;
+    }
+
+    .bg-header-beneficios {
+        background: transparent;
+        max-height: 20em;
+    }
+
+    #logo-hapvida-sessao-beneficios {
+        position: relative;
+        top: -12em;
+    }
+
+    #logo-plano-sessao-beneficios {
+        position: relative;
+        top: -5em;
+        width: 100%;
+        max-height: 28em;
+    }
+
+    .card-deck {
+        position: relative;
+        top: 3em;
+        margin-top: 1em;
+    }
+
+    .img-modal {
+        width: 60%;
+    }
+
+    .card img {
+        width: 100%;
+        min-height: 200px;
+    }
+
+    .img-card {
         max-height: 200px;
     }
 
-    #btn-cotacao-agora{
-    	position: relative;
-    	top: 7em;
+    #btn-cotacao-agora {
+        position: relative;
+        top: 7em;
     }
 
-    footer{
-    	position: relative;
-    	top: 10em;
+    footer {
+        position: relative;
+        top: 10em;
     }
-
-	
-
-	
-	
 }
-
