@@ -1,27 +1,37 @@
 from django.shortcuts import render, redirect
 import requests
-from .models import Leads
+from .models import Leads, Config_WhatsApp
 from datetime import datetime
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
+    
+        
+
     if request.method == 'POST':
         # Capturar os dados do formulário
         nome_leads = request.POST.get('nome') 
         whats_app_leads = request.POST.get('whatsapp')
         recebido_em = datetime.now()
         Leads.objects.create(nome_leads=nome_leads, whats_app_leads=whats_app_leads, data_recebimento=recebido_em)
-        whats_app_receptor = "5516999628815"
+        
         # Montar a mensagem
         message = f"Olá, Adriana! Você recebeu novo lead - Nome: {nome_leads} - WhatsApp: {whats_app_leads}<br>Acesse: www.afunimedsaocarlos.com.br/accounts/login/adriana/dashboard/"
-
-        # Sua API Key fornecida pelo CallMeBot
-        api_key = "1271569"  # Substitua pela sua API Key
-
+        
+        config_wa = Config_WhatsApp.objects.values('numero_whats_app', 'chave_api_whats_app')
+        print(config_wa)
+        for item in config_wa:
+            # Pegando os valores diretamente do dicionário
+            whats_app_receptor = item['numero_whats_app']
+            api_key = item['chave_api_whats_app']
+            print(f'receptor',whats_app_receptor)
+            print(f'api key',api_key)
+    
         # URL da API do CallMeBot (o WhatsApp deve estar no formato internacional)
-        url = f'https://api.callmebot.com/whatsapp.php?phone={whats_app_receptor}&text={message}&apikey={api_key}'
+        url = f'https://api.callmebot.com/whatsapp.php?phone=55{whats_app_receptor}&text={message}&apikey={api_key}'
+
 
         # Enviar a mensagem via requisição GET
         response = requests.get(url)

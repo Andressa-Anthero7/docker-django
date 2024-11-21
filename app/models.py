@@ -20,3 +20,13 @@ class Leads(models.Model):
             combined_string = f"{self.pk}-{self.nome_leads}-{self.whats_app_leads}-{self.data_recebimento}"
             self.slug = slugify(combined_string)
         return super().save(*args, **kwargs)
+
+
+class Config_WhatsApp(models.Model):
+    numero_whats_app = models.CharField(max_length=11, blank=False, null=False, default='Somente números e sem espaço')
+    chave_api_whats_app = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.numero_whats_app
+        
+
