@@ -1,23 +1,20 @@
-version: '3.9'
-
+version: "3"
 services:
   web:
-    build:
-      context: .                 # Diretório onde está o Dockerfile
-      dockerfile: Dockerfile
+    build: .
     command: gunicorn base.wsgi:application --bind 0.0.0.0:8000
     volumes:
-      - .:/app                   # Mapeia o diretório local para o contêiner
-      - static_volume:/app/static  # Persistir arquivos estáticos
+      - .:/app
+    expose:
+      - 8000
+    environment:
+      - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}
+      - DJANGO_DEBUG=False
+      - DJANGO_ALLOWED_HOSTS=yourdomain.com,www.yourdomain.com
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - .:/app
     ports:
-      - "8000:8000"              # Porta local:contêiner
-    env_file:
-      - .env                     # Arquivo de variáveis de ambiente (opcional)
-    networks:
-      - django_network
-
-volumes:
-  static_volume:                 # Volume para os arquivos estáticos
-
-networks:
-  django_network:
+      - "80:80"
