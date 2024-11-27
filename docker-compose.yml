@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+  web:
+    build:
+      context: .                 # Diretório onde está o Dockerfile
+      dockerfile: Dockerfile
+    command: gunicorn base.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - .:/app                   # Mapeia o diretório local para o contêiner
+      - static_volume:/app/static  # Persistir arquivos estáticos
+    ports:
+      - "8000:8000"              # Porta local:contêiner
+    env_file:
+      - .env                     # Arquivo de variáveis de ambiente (opcional)
+    networks:
+      - django_network
+
+volumes:
+  static_volume:                 # Volume para os arquivos estáticos
+
+networks:
+  django_network:
